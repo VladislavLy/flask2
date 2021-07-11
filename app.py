@@ -63,6 +63,8 @@ def get_specific():
             result = User.query.filter_by(Payment_Type=payment_type.title()).all()
         elif payment_type is None:
             result = User.query.filter_by(Product=product.title()).all()
+    else:
+        result = User.query.all()
 
     return render_template("specific.html", list = result)
 
